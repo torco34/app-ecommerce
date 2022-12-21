@@ -1,12 +1,15 @@
 import { useState } from "react";
-import Product from "./components/Product";
-
+import { Header } from "./components/Header";
+import { Product } from "./components/Product";
+import "./main";
 function App() {
   return (
-    <div className="App">
-      <h1>ecomerc</h1>
-      <Product />
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <Product />
+      </div>
+    </>
   );
 }
 

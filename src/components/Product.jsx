@@ -1,85 +1,43 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import nike from "../assets/img/nike.jpeg";
-import { AddShoppingCart } from "@mui/icons-material";
+import React from "react";
+import { StarOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Avatar, Card } from "antd";
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+const { Meta } = Card;
 
-export default function Product() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
+function Product() {
   return (
-    <Card sx={{ maxWidth: 305 }}>
-      <CardHeader
-        action={
-          <Typography variant="h2" color="textSecondary">
-            {50}
-          </Typography>
-        }
-        title="Shose"
-        subheader="naki"
-      />
-      <CardMedia component="img" height="194" image={nike} alt="Paella dish" />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          Running shoes
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <AddShoppingCart />
-        </IconButton>
-        {/* <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
-
-        {Array(4)
-          .fill()
-          .map((_, i) => (
-            <p>&#11088;</p>
-          ))}
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>
-            "Inspirado en el AJ1 original, el Air Jordan 1 Mid ofrece a los
-            fanáticos la oportunidad de seguir los pasos de MJ. El color
-            flamante bordea los materiales clásicos e impecables y aporta un
-            toque de modernidad a un diseño clásico. "
-          </Typography>
-        </CardContent>
-      </Collapse>
+    <Card
+      style={{ width: 300 }}
+      cover={
+        <img
+          alt="example"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMaVEdtqw-QuF73S3POsLjmw2G4DBiMVc7uw&usqp=CAU"
+        />
+      }
+      actions={[
+        <ShoppingCartOutlined
+          style={{
+            fontSize: "30px",
+            color: "#090902",
+          }}
+        />,
+        <Meta
+          avatar={Array(4)
+            .fill()
+            .map((_, i) => (
+              <StarOutlined
+                style={{
+                  fontSize: "25px",
+                  color: "#ebdd1f",
+                }}
+              />
+            ))}
+        />,
+      ]}
+    >
+      <Meta title="Zapatos Depotivo" description="This is the description" />
     </Card>
   );
 }
+
+export { Product };
