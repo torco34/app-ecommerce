@@ -7,7 +7,7 @@ const { Meta } = Card;
 
 function Product() {
   return (
-    <>
+    <div className="container">
       <Card
         style={{ width: 300 }}
         cover={
@@ -40,7 +40,7 @@ function Product() {
         <Meta title="Zapatos Depotivo" description="This is the description" />
         {accounting.formatMoney(50, "€")}
       </Card>
-    </>
+    </div>
   );
 }
 
