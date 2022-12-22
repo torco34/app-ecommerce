@@ -29,7 +29,7 @@ function Header() {
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
-      <Button className="m-auto b" variant="outline-light" size="lg">
+      <Button className="m-auto " variant="outline-light" size="lg">
         <ShoppingCartOutlined
           style={{
             fontSize: "50px",
