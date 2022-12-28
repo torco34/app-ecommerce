@@ -5,17 +5,12 @@ import accounting from "accounting";
 
 const { Meta } = Card;
 
-function Product() {
+function Product({ product: { id, name, image, price, rating, description } }) {
   return (
     <div className="container">
       <Card
-        style={{ width: 300 }}
-        cover={
-          <img
-            alt="example"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMaVEdtqw-QuF73S3POsLjmw2G4DBiMVc7uw&usqp=CAU"
-          />
-        }
+        style={{ width: "300px", padding: "3px" }}
+        cover={<img alt="example" src={image} />}
         actions={[
           <ShoppingCartOutlined
             style={{
@@ -24,7 +19,7 @@ function Product() {
             }}
           />,
           <Meta
-            avatar={Array(4)
+            avatar={Array(rating)
               .fill()
               .map((_, i) => (
                 <StarOutlined
@@ -37,8 +32,8 @@ function Product() {
           />,
         ]}
       >
-        <Meta title="Zapatos Depotivo" description="This is the description" />
-        {accounting.formatMoney(50, "€")}
+        <Meta title={name} description={description} />
+        {accounting.formatMoney(price, "€")}
       </Card>
     </div>
   );
