@@ -5,7 +5,11 @@ import Col from "react-bootstrap/Col";
 import productsData from "../data";
 import { Product } from "./Product";
 import { CheckoutCard } from "./CheckoutCard";
-import { ContainerCheckout } from "../assets/styled/CheckoutPages";
+import {
+  ContainerCheckout,
+  ContainerCheck,
+} from "../assets/styled/CheckoutPages";
+import { Total } from "./Total";
 
 export const CheckoutPages = () => {
   function FormRow() {
@@ -18,11 +22,11 @@ export const CheckoutPages = () => {
     );
   }
   return (
-    <div>
+    <ContainerCheck>
       <Container>
         <Row>
           <Col xs={12}>
-            <h2 className="text-center text-info"> shoppi card</h2>
+            <h2 className="text-center text-info"> Shopping Card</h2>
           </Col>
 
           <Col xs={12} sm={8} md={9}>
@@ -30,10 +34,10 @@ export const CheckoutPages = () => {
           </Col>
 
           <Col xs={12} sm={4} md={3}>
-            Total $35000
+            <Total />
           </Col>
         </Row>
       </Container>
-    </div>
+    </ContainerCheck>
   );
 };

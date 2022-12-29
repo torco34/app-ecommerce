@@ -1,12 +1,13 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../assets/img/tienda.png";
+// import logo from "../assets/img/tienda.png";
 import Button from "react-bootstrap/Button";
 import { ContainerHeader, ContainerImg } from "../assets/styled/Header";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 import Badge from "react-bootstrap/Badge";
+import { Logo } from "./Logo";
 
 function Header() {
   return (
@@ -14,7 +15,7 @@ function Header() {
       <Container>
         <ContainerImg>
           <Navbar.Brand href="#home">
-            <img src={logo} alt="i" />
+            <Logo />
           </Navbar.Brand>
         </ContainerImg>
 

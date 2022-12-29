@@ -9,7 +9,7 @@ function CheckoutCard({ product: { id, name, image, price, rating } }) {
   return (
     <div className="container">
       <Card
-        style={{ width: "300px", padding: "13px" }}
+        style={{ width: "300px", height: "100%" }}
         cover={<img alt="example" src={image} />}
         actions={[
           <Meta
@@ -27,8 +27,8 @@ function CheckoutCard({ product: { id, name, image, price, rating } }) {
           />,
           <DeleteOutlined
             style={{
-              fontSize: "30px",
-              color: "#090902",
+              fontSize: "20px",
+              color: "#6f6767",
             }}
           />,
         ]}
