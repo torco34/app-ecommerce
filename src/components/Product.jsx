@@ -5,7 +5,9 @@ import accounting from "accounting";
 
 const { Meta } = Card;
 
-function Product({ product: { id, name, image, price, rating, description } }) {
+function Product({
+  product: { index, id, name, image, price, rating, description },
+}) {
   return (
     <div className="container">
       <Card
@@ -34,7 +36,7 @@ function Product({ product: { id, name, image, price, rating, description } }) {
         ]}
       >
         <Meta title={name} description={description} />
-        {accounting.formatMoney(50, "€")}
+        {accounting.formatMoney(price, "€")}
       </Card>
     </div>
   );
