@@ -15,13 +15,16 @@ const ContainerHeader = styled.div`
 `;
 const ContainerImg = styled.div`
   overflow: hidden;
-  width: 10%;
-  height: 8vh;
+  width: 6%;
+  /* height: 8vh; */
   img {
     width: 100%;
     height: 100%;
     border-radius: 5%;
     object-fit: cover;
+    color: red;
+    /* border: solid 3px #ccc; */
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 `;
 export { ContainerHeader, ContainerImg };

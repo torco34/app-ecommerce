@@ -1,23 +1,17 @@
 import React from "react";
-import { StarOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { StarOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import accounting from "accounting";
 
 const { Meta } = Card;
 
-function Product({ product: { id, name, image, price, rating, description } }) {
+function CheckoutCard({ product: { id, name, image, price, rating } }) {
   return (
     <div className="container">
       <Card
-        style={{ width: "300px" }}
+        style={{ width: "300px", padding: "13px" }}
         cover={<img alt="example" src={image} />}
         actions={[
-          <ShoppingCartOutlined
-            style={{
-              fontSize: "30px",
-              color: "#090902",
-            }}
-          />,
           <Meta
             avatar={Array(rating)
               .fill()
@@ -31,13 +25,19 @@ function Product({ product: { id, name, image, price, rating, description } }) {
                 />
               ))}
           />,
+          <DeleteOutlined
+            style={{
+              fontSize: "30px",
+              color: "#090902",
+            }}
+          />,
         ]}
       >
-        <Meta title={name} description={description} />
-        {accounting.formatMoney(50, "€")}
+        <Meta title={name} />
+        {accounting.formatMoney(price, "€")}
       </Card>
     </div>
   );
 }
 
-export { Product };
+export { CheckoutCard };
