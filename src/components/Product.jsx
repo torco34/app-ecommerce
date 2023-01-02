@@ -2,12 +2,19 @@ import React from "react";
 import { StarOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import accounting from "accounting";
+import { actionTypes } from "../reducer";
+import { useStateValue } from "../StateProvider";
 
 const { Meta } = Card;
 
-function Product({
-  product: { index, id, name, image, price, rating, description },
-}) {
+function Product({ product: { id, name, image, price, rating, description } }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const addCard = () => {
+    dispatch({
+      type: actionTypes.ADD_TO_BASKET,
+      item: { id, name, image, price, rating, description },
+    });
+  };
   return (
     <div className="container">
       <Card
@@ -19,6 +26,7 @@ function Product({
               fontSize: "30px",
               color: "#090902",
             }}
+            onClick={addCard}
           />,
           <Meta
             avatar={Array(rating)

@@ -2,10 +2,19 @@ import React from "react";
 import { StarOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import accounting from "accounting";
-
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../reducer";
 const { Meta } = Card;
 
 function CheckoutCard({ product: { id, name, image, price, rating } }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const remuveItem = () => {
+    console.log("ola mundo");
+    dispatch({
+      type: actionTypes.REMOVE_ITEM,
+      id: id,
+    });
+  };
   return (
     <div className="container">
       <Card
@@ -30,6 +39,7 @@ function CheckoutCard({ product: { id, name, image, price, rating } }) {
               fontSize: "20px",
               color: "#6f6767",
             }}
+            onClick={remuveItem}
           />,
         ]}
       >

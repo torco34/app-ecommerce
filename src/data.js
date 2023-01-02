@@ -69,7 +69,7 @@ const Products = [
       "ROG Zephyrus M16: un equipo con potencia para el gaming y el mundo profesional",
   },
   {
-    id: 1,
+    id: 8,
     name: "Audifonos",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7y2GTrLWAfsCUp2a-vsu4Kxe42Z3gT4WJw&usqp=CAU",

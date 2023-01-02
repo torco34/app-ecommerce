@@ -4,12 +4,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { ContainerHeader, ContainerImg } from "../assets/styled/Header";
 import { ShoppingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-
 import Badge from "react-bootstrap/Badge";
 import { Logo } from "./Logo";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 
 function Header() {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -22,13 +23,9 @@ function Header() {
         <ContainerHeader>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="m-auto ">
-              <Nav.Link>
-                <Link to="/">Hello</Link>
-              </Nav.Link>
+              <Link to="/">Hello</Link>
 
-              <Nav.Link>
-                <Link to="/chek">Sign in</Link>
-              </Nav.Link>
+              <Link to="/chek">Sign in</Link>
             </Nav>
           </Navbar.Collapse>
         </ContainerHeader>
@@ -44,7 +41,7 @@ function Header() {
               position: "absolute",
             }}
           />
-          <Badge bg="danger">1</Badge>
+          <Badge bg="danger">{basket?.length}</Badge>
         </Link>
       </Button>
     </Navbar>

@@ -2,8 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import productsData from "../data";
-import { Product } from "./Product";
+import { useStateValue } from "../StateProvider";
 import { CheckoutCard } from "./CheckoutCard";
 import {
   ContainerCheckout,
@@ -12,11 +11,12 @@ import {
 import { Total } from "./Total";
 
 export const CheckoutPages = () => {
+  const [{ basket }, dispatch] = useStateValue();
   function FormRow() {
     return (
       <ContainerCheckout>
-        {productsData.map((product) => (
-          <CheckoutCard key={product.name} product={product} />
+        {basket?.map((item) => (
+          <CheckoutCard key={item} product={item} />
         ))}
       </ContainerCheckout>
     );
