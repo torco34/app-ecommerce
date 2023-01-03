@@ -4,6 +4,7 @@ import { Card } from "antd";
 import accounting from "accounting";
 import { actionTypes } from "../reducer";
 import { useStateValue } from "../StateProvider";
+import { ContainerProduct } from "../assets/styled/Product";
 
 const { Meta } = Card;
 
@@ -16,7 +17,7 @@ function Product({ product: { id, name, image, price, rating, description } }) {
     });
   };
   return (
-    <div className="container">
+    <ContainerProduct>
       <Card
         style={{ width: "300px" }}
         cover={<img alt="example" src={image} />}
@@ -46,7 +47,7 @@ function Product({ product: { id, name, image, price, rating, description } }) {
         <Meta title={name} description={description} />
         {accounting.formatMoney(price, "€")}
       </Card>
-    </div>
+    </ContainerProduct>
   );
 }
 

@@ -9,7 +9,6 @@ const { Meta } = Card;
 function CheckoutCard({ product: { id, name, image, price, rating } }) {
   const [{ basket }, dispatch] = useStateValue();
   const remuveItem = () => {
-    console.log("ola mundo");
     dispatch({
       type: actionTypes.REMOVE_ITEM,
       id: id,

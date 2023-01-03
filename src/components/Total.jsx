@@ -11,7 +11,7 @@ export const Total = () => {
   return (
     <ContainerTotal>
       <h5>Total items: {basket?.length}</h5>
-      <h5>{accounting.formatMoney(getBasketTotal(), "€")}</h5>
+      <h5>{accounting.formatMoney(getBasketTotal(basket), "€")}</h5>
       <Button variant="danger">Check out</Button>{" "}
     </ContainerTotal>
   );

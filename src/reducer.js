@@ -6,8 +6,11 @@ export const actionTypes = {
   ADD_TO_BASKET: "ADD_TO_BASKET",
   REMOVE_ITEM: "REMOVE_ITEM",
 };
+
+// RETO LOGRADO
 export const getBasketTotal = (basket) => {
-  basket?.reduce((amount, item) => item.price + amount, 0);
+  const sumPrice = basket?.reduce((amount, item) => item.price + amount, 0);
+  return sumPrice;
 };
 
 const reducer = (state, action) => {
