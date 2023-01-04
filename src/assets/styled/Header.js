@@ -10,6 +10,10 @@ const colors = {
 const ContainerHeader = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 
+  a {
+    text-decoration: none;
+    margin-left: 20px;
+  }
   p {
     font-family: Arial, Helvetica, sans-serif;
     color: ${colors.blue};

@@ -5,6 +5,8 @@ import { Header } from "./components/Header";
 import { Product } from "./components/Product";
 
 import { Products } from "./components/Products";
+
+import { SignUp } from "./components/SignUp";
 // import "./main";
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Products />}></Route>
+          <Route path="/sign" element={<SignUp />}></Route>
           <Route path="/chek" element={<CheckoutPages />}></Route>
         </Routes>
       </Router>

@@ -22,10 +22,10 @@ function Header() {
 
         <ContainerHeader>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="m-auto ">
-              <Link to="/">Hello</Link>
+            <Nav className="m-auto  link">
+              <Link to="/">Login</Link>
 
-              <Link to="/chek">Sign in</Link>
+              <Link to="/sign">Sign up</Link>
             </Nav>
           </Navbar.Collapse>
         </ContainerHeader>

@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
-    "@emotion/react": "^11.10.5",
     "accounting": "^0.4.1",
     "antd": "^5.1.0",
     "bootstrap": "^5.2.3",
+    "firebase": "^9.15.0",
     "gh-pages": "^4.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
