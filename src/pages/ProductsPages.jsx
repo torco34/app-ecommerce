@@ -1,8 +1,8 @@
 import React from "react";
-import { Product } from "./Product";
+import { Product } from "../components/Product";
 import productsData from "../data";
 import { ContainerProduct } from "../assets/styled/Products";
-function Products() {
+function ProductsPages() {
   return (
     <div className="container">
       <ContainerProduct>
@@ -14,4 +14,4 @@ function Products() {
   );
 }
 
-export { Products };
+export { ProductsPages };

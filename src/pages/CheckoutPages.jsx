@@ -3,12 +3,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useStateValue } from "../StateProvider";
-import { CheckoutCard } from "./CheckoutCard";
+import { CheckoutCard } from "../components/CheckoutCard";
 import {
   ContainerCheckout,
   ContainerCheck,
 } from "../assets/styled/CheckoutPages";
-import { Total } from "./Total";
+import { Total } from "../components/Total";
 
 export const CheckoutPages = () => {
   const [{ basket }, dispatch] = useStateValue();

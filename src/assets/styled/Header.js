@@ -7,6 +7,9 @@ const colors = {
   silver: "#F1F6F5",
   black: "#3a4750",
 };
+const ContainerThader = styled.div`
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+`;
 const ContainerHeader = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 
@@ -24,7 +27,7 @@ const ContainerHeader = styled.div`
 `;
 const ContainerImg = styled.div`
   overflow: hidden;
-  background-color: ${colors.silver};
+
   width: 100px;
 `;
-export { ContainerHeader, ContainerImg };
+export { ContainerThader, ContainerHeader, ContainerImg };

@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDEyLaQHOjGARdWy5W_YnOhEaWX_ASue1c",
   authDomain: "ecomer-react-200f4.firebaseapp.com",
@@ -6,3 +8,6 @@ const firebaseConfig = {
   messagingSenderId: "1019118299076",
   appId: "1:1019118299076:web:5fced308cada3ef7fd6691",
 };
+const app = initializeApp(firebaseConfig);
+const auth = firebase();
+export { auth };

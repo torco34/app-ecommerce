@@ -1,18 +1,20 @@
 export const initialState = {
   basket: [],
 };
-
+//  SAY ACCITION WHAT HACE
 export const actionTypes = {
+  // AGREGAR ELEMENTO
   ADD_TO_BASKET: "ADD_TO_BASKET",
+  // ELIMINAR ELEMTOS DE CAR
   REMOVE_ITEM: "REMOVE_ITEM",
 };
 
-// RETO LOGRADO
+// RETO LOGRADO SUMA PRECIO
 export const getBasketTotal = (basket) => {
   const sumPrice = basket?.reduce((amount, item) => item.price + amount, 0);
   return sumPrice;
 };
-
+// FUCTION
 const reducer = (state, action) => {
   // console.log(action);
   switch (action.type) {
