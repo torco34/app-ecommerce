@@ -15,6 +15,7 @@
     "antd": "^5.1.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.15.0",
+    "formik": "^2.2.9",
     "gh-pages": "^4.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
