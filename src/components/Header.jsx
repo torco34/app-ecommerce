@@ -6,6 +6,7 @@ import {
   ContainerThader,
   ContainerHeader,
   ContainerImg,
+  Carshoop,
 } from "../assets/styled/Header";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Badge from "react-bootstrap/Badge";
@@ -30,10 +31,10 @@ function Header() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-auto  link">
                   {navbars.map((navbar) => (
-                    <li>
+                    <li key={navbar.to}>
                       <NavLink
                         style={({ isActive }) => ({
-                          color: isActive ? " #2face7" : "#333",
+                          color: isActive ? "#0dcaf0" : "#333",
                           borderBottom: isActive ? "solid" : "",
                         })}
                         to={navbar.to}
@@ -48,21 +49,23 @@ function Header() {
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </Container>
-          <Button className="m-auto " variant="outline-light" size="lg">
-            <Link to="/chek">
-              <ShoppingCartOutlined
-                style={{
-                  fontSize: "50px",
-                  color: "#2face7",
-                  position: "absolute",
-                }}
-              />
-              <Badge bg="danger">{basket?.length}</Badge>
-            </Link>
-          </Button>
         </Navbar>
       </ContainerThader>
-      <br></br>
+      <Carshoop>
+        <Button className=" " variant="outline-light" size="lg">
+          <Link to="/chek">
+            <ShoppingCartOutlined
+              style={{
+                fontSize: "50px",
+                color: "#0dcaf0",
+                position: "absolute",
+              }}
+            />
+            <Badge bg="danger">{basket?.length}</Badge>
+          </Link>
+        </Button>
+      </Carshoop>
+
       <Outlet />
     </>
   );
@@ -79,8 +82,8 @@ navbars.push({
   text: "Product",
 });
 navbars.push({
-  to: "siup",
-  text: "Login",
+  to: "regis",
+  text: "SignIn",
 });
 
 navbars.push({

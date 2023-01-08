@@ -6,8 +6,8 @@ import {
   HomePages,
   NotFun,
   ProductsPages,
-  SignIn,
-  SignUp,
+  SignInPages,
+  SignUpPages,
 } from "../pages";
 
 function AppRouter() {
@@ -18,8 +18,8 @@ function AppRouter() {
           <Route path="/" element={<Header />}>
             {/* <Route path="/produc" element={<HomePages />} /> */}
             <Route path="/prod" element={<ProductsPages />} />
-            <Route path="sign" element={<SignUp />} />
-            <Route path="siup" element={<SignIn />} />
+            <Route path="regis" element={<SignUpPages />} />
+            <Route path="sign" element={<SignInPages />} />
             <Route path="chek" element={<CheckoutPages />} />
             <Route path="*" element={<NotFun />} />
           </Route>

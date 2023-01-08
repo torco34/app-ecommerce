@@ -7,7 +7,7 @@ function ProductsPages() {
     <div className="container">
       <ContainerProduct>
         {productsData.map((product) => (
-          <Product key={product.name} product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </ContainerProduct>
     </div>

@@ -4,12 +4,10 @@ import { FormLogIn } from "../components/FormLogIn";
 import { ContainerSignin } from "../assets/styled/SignIn";
 import { PinturePublic } from "../components/PinturePublic";
 
-export const SignIn = () => {
+export const SignInPages = () => {
   return (
     <ContainerSignin>
       <FormLogIn />
-      {/* <FormLogIn />
-      <PinturePublic /> */}
     </ContainerSignin>
   );
 };

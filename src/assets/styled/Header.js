@@ -27,7 +27,28 @@ const ContainerHeader = styled.div`
 `;
 const ContainerImg = styled.div`
   overflow: hidden;
-
   width: 100px;
 `;
-export { ContainerThader, ContainerHeader, ContainerImg };
+
+const Carshoop = styled.div`
+  position: relative;
+  left: 0px;
+
+  @media (min-width: 778px) {
+    button {
+      position: absolute;
+      top: -7px;
+      right: 0px;
+
+      z-index: 1;
+    }
+  }
+
+  button {
+    position: fixed;
+
+    right: 20px;
+    z-index: 1;
+  }
+`;
+export { ContainerThader, ContainerHeader, ContainerImg, Carshoop };

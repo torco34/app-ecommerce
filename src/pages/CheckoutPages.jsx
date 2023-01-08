@@ -16,7 +16,7 @@ export const CheckoutPages = () => {
     return (
       <ContainerCheckout>
         {basket?.map((item) => (
-          <CheckoutCard key={item} product={item} />
+          <CheckoutCard key={item.id} product={item} />
         ))}
       </ContainerCheckout>
     );

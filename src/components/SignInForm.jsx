@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
 import { Link } from "react-router-dom";
-export const FormLogIn = () => {
+export const SignInForm = () => {
   const publica = (value) => {
     console.log(value);
   };
@@ -19,18 +19,28 @@ export const FormLogIn = () => {
         <ContainerFormik>
           <Form className="form">
             <label>
-              Email
+              * Nombre
+              <Field name="name" type="text" />
+            </label>
+            <label>
+              * Apellidos
+              <Field name="name" type="text" />
+            </label>
+            <label>
+              * Email
               <Field name="email" type="email" />
             </label>
             <label>
-              Contraseña
+              * Contraseña
               <Field name="password" type="password" />
             </label>
             <label>
-              <Link to="/regis">Registrases</Link>
+              * confirmar Contraseña
+              <Field name="password" type="password" />
             </label>
+            <label>* Campos obligatorios.</label>
             <button type="submit" className="btn btn-info">
-              iniciar sesión
+              Crear Perfil
             </button>
           </Form>
         </ContainerFormik>

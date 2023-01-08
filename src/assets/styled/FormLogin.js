@@ -6,18 +6,22 @@ const ContainerFormik = styled.div`
   align-items: center;
   font-family: sans-serif;
   flex-direction: column;
+  background-color: #eeeeee;
 
   .form {
     border: 1px solid silver;
     margin-bottom: 20px;
     border-radius: 6px;
     padding: 20px;
-    height: 50vh;
+    /* width: 30%; */
+    margin: auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #ffff;
   }
   label,
   input {
     display: block;
+    width: 100%;
   }
   label,
   button {
