@@ -6,7 +6,7 @@ const ContainerPages = styled.div`
   align-items: center;
   font-family: sans-serif;
   flex-direction: column;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   height: 90vh;
 `;
 

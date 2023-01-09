@@ -8,19 +8,20 @@ import { ContainerProduct } from "../assets/styled/Product";
 
 const { Meta } = Card;
 
-function Product({ product: { id, name, image, price, rating, description } }) {
+function Product({ todo: { id, title, images, price, rating, description } }) {
   const [{ basket }, dispatch] = useStateValue();
+
   const addCard = () => {
     dispatch({
       type: actionTypes.ADD_TO_BASKET,
-      item: { id, name, image, price, rating, description },
+      item: { id, name, images, price, rating, description },
     });
   };
   return (
     <ContainerProduct>
       <Card
         style={{ width: "300px" }}
-        cover={<img alt="example" src={image} />}
+        cover={<img alt="example" src={images} />}
         actions={[
           <ShoppingCartOutlined
             style={{
@@ -44,7 +45,7 @@ function Product({ product: { id, name, image, price, rating, description } }) {
           />,
         ]}
       >
-        <Meta title={name} description={description} />
+        <Meta title={title} description={description} />
         {accounting.formatMoney(price, "€")}
       </Card>
     </ContainerProduct>

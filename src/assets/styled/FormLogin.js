@@ -6,7 +6,7 @@ const ContainerFormik = styled.div`
   align-items: center;
   font-family: sans-serif;
   flex-direction: column;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
 
   .form {
     border: 1px solid silver;
