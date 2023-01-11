@@ -2,26 +2,42 @@ import React, { useEffect, useState } from "react";
 import { Product } from "../components/Product";
 import productsData from "../data";
 import { ContainerProduct } from "../assets/styled/Products";
+import { Input } from "../components/Input";
 
 function ProductsPages() {
-  const [data, setData] = useState(productsData);
   const URL = "http://api.escuelajs.co/api/v1/products";
   const [todos, setTodos] = useState();
+  const [search, setSearch] = useState("");
   const fetchApi = async () => {
     const respond = await fetch(URL);
     const respondJSON = await respond.json();
     setTodos(respondJSON);
-    console.log(respond);
   };
   useEffect(() => {
     fetchApi();
   }, []);
+  let searchTodo = [];
+
+  if (!search.length >= 1) {
+    searchTodo = todos;
+  } else {
+    searchTodo = todos.filter((todo) => {
+      const todoText = todo.title.toLowerCase();
+      const searchText = search.toLowerCase();
+      return todoText.includes(searchText);
+    });
+  }
+
   return (
     <div className="container">
+      <Input search={search} setSearch={setSearch} />
+      <br />
       <ContainerProduct>
         {!todos
-          ? "cargando.."
-          : todos.map((todo, index) => <Product key={todo.id} todo={todo} />)}
+          ? "Cargando..."
+          : searchTodo.map((todo, index) => (
+              <Product key={todo.id} todo={todo} />
+            ))}
       </ContainerProduct>
     </div>
   );

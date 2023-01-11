@@ -14,7 +14,7 @@ function Product({ todo: { id, title, images, price, rating, description } }) {
   const addCard = () => {
     dispatch({
       type: actionTypes.ADD_TO_BASKET,
-      item: { id, name, images, price, rating, description },
+      item: { id, title, images, price, rating, description },
     });
   };
   return (

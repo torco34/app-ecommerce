@@ -15,8 +15,8 @@ export const CheckoutPages = () => {
   function FormRow() {
     return (
       <ContainerCheckout>
-        {basket?.map((item) => (
-          <CheckoutCard key={item.id} product={item} />
+        {basket?.map((item, index) => (
+          <CheckoutCard key={index} product={item} />
         ))}
       </ContainerCheckout>
     );
