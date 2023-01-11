@@ -6,7 +6,7 @@ import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 const { Meta } = Card;
 
-function CheckoutCard({ product: { id, title, images, price, rating } }) {
+function CheckoutCard({ product: { id, name, image, price, rating } }) {
   const [{ basket }, dispatch] = useStateValue();
   const remuveItem = () => {
     dispatch({
@@ -18,7 +18,7 @@ function CheckoutCard({ product: { id, title, images, price, rating } }) {
     <div className="container">
       <Card
         style={{ width: "300px", height: "100%" }}
-        cover={<img alt="example" src={images} />}
+        cover={<img alt="example" src={image} />}
         actions={[
           <Meta
             avatar={Array(rating)
@@ -42,7 +42,7 @@ function CheckoutCard({ product: { id, title, images, price, rating } }) {
           />,
         ]}
       >
-        <Meta title={title} />
+        <Meta title={name} />
         {accounting.formatMoney(price, "€")}
       </Card>
     </div>
