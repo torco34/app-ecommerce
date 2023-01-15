@@ -17,7 +17,7 @@ export const SignInForm = () => {
             let errores = {};
             // validacion name
             if (!valores.nombre) {
-              errores.nombre = "No has ingresado tu nombre";
+              errores.nombre = "Ingresado tu nombre";
             } else if (!/^[a-zA-ZA-y\s]{1,40}$/.test(valores.nombre)) {
               errores.nombre = "El nombre solo puede tener letras y espacio";
             }
@@ -34,9 +34,9 @@ export const SignInForm = () => {
             }
             // pasowerd
             if (`${valores.password}`.length < 2) {
-              errores.password = "Escribe una contrasena validad";
+              errores.password = "Escribe la contraseña";
             } else if (`${valores.password}`.length > 7) {
-              errores.password = "Medai";
+              errores.password = "La contrasena es incorrecta";
             }
             return errores;
           }}
@@ -80,18 +80,19 @@ export const SignInForm = () => {
                 <ErrorMessage
                   name="password"
                   component={() => (
-                    <div className="text-success text-center">
+                    <div className="text-danger text-center">
                       {errors.password}
                     </div>
                   )}
                 />
               </div>
               {texSend && (
-                <p className="text-success text-center">
-                  Bienvenido a tienda onLine......
-                </p>
+                <p className="text-success text-center">Ya quedo registrado</p>
               )}
               <button type="submit">Registrarse</button>
+              <Link to="/sign">
+                <p>Iniciar sesion</p>
+              </Link>
             </Form>
           )}
         </Formik>

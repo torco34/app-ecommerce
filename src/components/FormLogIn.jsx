@@ -11,17 +11,12 @@ export const FormLogIn = () => {
 
         <Formik
           initialValues={{
-            nombre: "",
+            // nombre: "",
             correo: "",
+            password: "",
           }}
           validate={(valores) => {
             let errores = {};
-            // validacion name
-            if (!valores.nombre) {
-              errores.nombre = "No has ingresado tu nombre";
-            } else if (!/^[a-zA-ZA-y\s]{1,40}$/.test(valores.nombre)) {
-              errores.nombre = "El nombre solo puede tener letras y espacio";
-            }
 
             // validacion correo
             if (!valores.correo) {
@@ -32,6 +27,12 @@ export const FormLogIn = () => {
               )
             ) {
               errores.correo = "El correo es incorrecto";
+            }
+            // registro
+            if (`${valores.password}`.length < 2) {
+              errores.password = "Ingrese contrasena";
+            } else if (`${valores.password}`.length > 7) {
+              errores.password = "Contrasena incorrect";
             }
             return errores;
           }}
@@ -45,18 +46,6 @@ export const FormLogIn = () => {
         >
           {({ errors }) => (
             <Form className="form">
-              <div>
-                <label>Nombre</label>
-                <Field type="text" id="nombre" name="nombre" />
-                <ErrorMessage
-                  name="nombre"
-                  component={() => (
-                    <div className="text-danger text-center">
-                      {errors.nombre}
-                    </div>
-                  )}
-                />
-              </div>
               <div className="login__container--form">
                 <label>Correo</label>
                 <Field type="email" id="correo" name="correo" />
@@ -69,12 +58,27 @@ export const FormLogIn = () => {
                   )}
                 />
               </div>
+              <div className="login__container--form">
+                <label>Password</label>
+                <Field type="password" id="password" name="password" />
+                <ErrorMessage
+                  name="password"
+                  component={() => (
+                    <div className="text-danger text-center">
+                      {errors.password}
+                    </div>
+                  )}
+                />
+              </div>
               {texSend && (
                 <p className="text-success text-center">
                   Bienvenido a tienda onLine......
                 </p>
               )}
               <button type="submit">Inicia sesión</button>
+              <Link to="/regis">
+                <p>Registrarse</p>
+              </Link>
             </Form>
           )}
         </Formik>
