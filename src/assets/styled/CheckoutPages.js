@@ -8,7 +8,7 @@ const ContainerCheckout = styled.div`
 const ContainerCheck = styled.div`
   h2 {
     font-family: Arial, Helvetica, sans-serif;
-    color: #000;
+    color: #ce7777;
   }
 `;
 export { ContainerCheckout, ContainerCheck };

@@ -39,9 +39,12 @@ export const SignInForm = () => {
               <Field name="password" type="password" />
             </label>
             <label>* Campos obligatorios.</label>
-            <button type="submit" className="btn btn-info">
+            <button type="submit" className="btn btn-light">
               Crear Perfil
-            </button>
+            </button>{" "}
+            <label>
+              <Link to="/sign">Iniciar Sesion</Link>
+            </label>
           </Form>
         </ContainerFormik>
       </Formik>

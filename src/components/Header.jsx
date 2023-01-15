@@ -34,7 +34,7 @@ function Header() {
                     <li key={navbar.to}>
                       <NavLink
                         style={({ isActive }) => ({
-                          color: isActive ? "#0dcaf0" : "#333",
+                          color: isActive ? "#CE7777" : "#2b3a55",
                           borderBottom: isActive ? "solid" : "",
                         })}
                         to={navbar.to}

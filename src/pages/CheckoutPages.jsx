@@ -26,7 +26,7 @@ export const CheckoutPages = () => {
       <Container>
         <Row>
           <Col xs={12}>
-            <h2 className="text-center text-info"> Shopping Card</h2>
+            <h2 className="text-center"> Shopping Card</h2>
           </Col>
 
           <Col xs={12} sm={8} md={9}>

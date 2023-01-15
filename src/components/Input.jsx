@@ -11,7 +11,7 @@ export const Input = ({ search, setSearch }) => {
         type="text"
         value={search}
         onChange={onchange}
-        placeholder="Search "
+        placeholder="Search... "
         className="  rounded"
       />
     </div>
