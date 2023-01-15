@@ -6,71 +6,79 @@ export const FormLogIn = () => {
   const [texSend, setTexSend] = useState(false);
   return (
     <>
-      <h2>Inicia sesión</h2>
-      <Formik
-        initialValues={{
-          nombre: "",
-          correo: "",
-        }}
-        validate={(valores) => {
-          let errores = {};
-          // validacion name
-          if (!valores.nombre) {
-            errores.nombre = "Porfavor ingresa un nombre";
-          } else if (!/^[a-zA-ZA-y\s]{1,40}$/.test(valores.nombre)) {
-            errores.nombre = "El nombre solo puede tener letras y espacio";
-          }
+      <ContainerFormik>
+        <h2>Inicia sesión</h2>
 
-          // validacion correo
-          if (!valores.correo) {
-            errores.correo = "ingrese el correo";
-          } else if (
-            !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-              valores.correo
-            )
-          ) {
-            errores.correo = "El correo es incorrecto";
-          }
-          return errores;
-        }}
-        onSubmit={(valores, { resetForm }) => {
-          resetForm();
+        <Formik
+          initialValues={{
+            nombre: "",
+            correo: "",
+          }}
+          validate={(valores) => {
+            let errores = {};
+            // validacion name
+            if (!valores.nombre) {
+              errores.nombre = "No has ingresado tu nombre";
+            } else if (!/^[a-zA-ZA-y\s]{1,40}$/.test(valores.nombre)) {
+              errores.nombre = "El nombre solo puede tener letras y espacio";
+            }
 
-          setTexSend(true);
+            // validacion correo
+            if (!valores.correo) {
+              errores.correo = "ingrese el correo";
+            } else if (
+              !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+                valores.correo
+              )
+            ) {
+              errores.correo = "El correo es incorrecto";
+            }
+            return errores;
+          }}
+          onSubmit={(valores, { resetForm }) => {
+            resetForm();
 
-          setTimeout(() => setTexSend(false), 5000);
-        }}
-      >
-        {({ errors }) => (
-          <Form>
-            <div className="">
-              <label>nombre</label>
-              <Field
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Nombre"
-              />
-              <ErrorMessage
-                name="nombre"
-                component={() => (
-                  <div className="text-oragen">{errors.nombre}</div>
-                )}
-              />
-            </div>
-            <div className="login__container--form">
-              <label>correo</label>
-              <Field type="email" id="correo" name="correo" />
-              <ErrorMessage
-                name="correo"
-                component={() => <div className="">{errors.correo}</div>}
-              />
-            </div>
-            <button type="submit"> Enviar</button>
-            {texSend && <p>Formularia enviado con exito</p>}
-          </Form>
-        )}
-      </Formik>
+            setTexSend(true);
+
+            setTimeout(() => setTexSend(false), 5000);
+          }}
+        >
+          {({ errors }) => (
+            <Form className="form">
+              <div>
+                <label>Nombre</label>
+                <Field type="text" id="nombre" name="nombre" />
+                <ErrorMessage
+                  name="nombre"
+                  component={() => (
+                    <div className="text-danger text-center">
+                      {errors.nombre}
+                    </div>
+                  )}
+                />
+              </div>
+              <div className="login__container--form">
+                <label>Correo</label>
+                <Field type="email" id="correo" name="correo" />
+                <ErrorMessage
+                  name="correo"
+                  component={() => (
+                    <div className="text-danger text-center">
+                      {errors.correo}
+                    </div>
+                  )}
+                />
+              </div>
+              {texSend && (
+                <p className="text-success text-center">
+                  Bienvenido a tienda onLine......
+                </p>
+              )}
+              <button type="submit"> Enviar</button>
+            </Form>
+          )}
+        </Formik>
+      </ContainerFormik>
     </>
   );
 };

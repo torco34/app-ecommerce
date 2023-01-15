@@ -24,7 +24,8 @@ const ContainerFormik = styled.div`
     padding: 60px 68px 40px;
     width: 450px;
     /* background-image: linear-gradient(#21c08b, #8f57fd); */
-    background-image: linear-gradient(#2b3a55, #ce7777);
+    /* background-image: linear-gradient(#2b3a55, #ce7777); */
+    background-image: linear-gradient(#2b3a55, #e8c4c4);
   }
   label,
   a {
@@ -40,7 +41,6 @@ const ContainerFormik = styled.div`
     color: white;
     font-family: "Muli", sans-serif;
     font-size: 16px;
-    height: 60px;
     margin-bottom: 10px;
     outline: none;
     width: 100%;
