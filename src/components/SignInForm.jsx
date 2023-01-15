@@ -7,8 +7,6 @@ export const SignInForm = () => {
   return (
     <>
       <ContainerFormik>
-        <h2>Inicia sesión</h2>
-
         <Formik
           initialValues={{
             nombre: "",
@@ -34,10 +32,11 @@ export const SignInForm = () => {
             ) {
               errores.correo = "El correo es incorrecto";
             }
-            if (!valores.password) {
-              errores.password = "contrasena debil";
-            } else if (`${valores.password}`.length < 7) {
-              errores.password = "la contrasena debe tener mas 9";
+            // pasowerd
+            if (`${valores.password}`.length < 2) {
+              errores.password = "Escribe una contrasena validad";
+            } else if (`${valores.password}`.length > 7) {
+              errores.password = "Medai";
             }
             return errores;
           }}
@@ -45,7 +44,7 @@ export const SignInForm = () => {
             resetForm();
 
             setTexSend(true);
-
+            console.log("heloo");
             setTimeout(() => setTexSend(false), 5000);
           }}
         >
@@ -77,11 +76,11 @@ export const SignInForm = () => {
               </div>
               <div className="login__container--form">
                 <label>Password</label>
-                <Field type="password" id="password" />
+                <Field type="password" id="password" name="password" />
                 <ErrorMessage
                   name="password"
                   component={() => (
-                    <div className="text-danger text-center">
+                    <div className="text-success text-center">
                       {errors.password}
                     </div>
                   )}
