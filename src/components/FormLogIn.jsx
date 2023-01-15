@@ -74,7 +74,7 @@ export const FormLogIn = () => {
                   Bienvenido a tienda onLine......
                 </p>
               )}
-              <button type="submit"> Enviar</button>
+              <button type="submit">Inicia sesión</button>
             </Form>
           )}
         </Formik>
