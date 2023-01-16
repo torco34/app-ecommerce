@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 export const FormLogIn = () => {
   const [texSend, setTexSend] = useState(false);
   return (
@@ -29,9 +29,9 @@ export const FormLogIn = () => {
               errores.correo = "El correo es incorrecto";
             }
             // registro
-            if (`${valores.password}`.length < 2) {
+            if (`${valores.password}`.length < 5) {
               errores.password = "Ingrese contrasena";
-            } else if (`${valores.password}`.length > 7) {
+            } else if (`${valores.password}`.length < 2) {
               errores.password = "Contrasena incorrect";
             }
             return errores;

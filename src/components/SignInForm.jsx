@@ -33,9 +33,9 @@ export const SignInForm = () => {
               errores.correo = "El correo es incorrecto";
             }
             // pasowerd
-            if (`${valores.password}`.length < 2) {
+            if (`${valores.password}`.length < 5) {
               errores.password = "Escribe la contraseña";
-            } else if (`${valores.password}`.length > 7) {
+            } else if (`${valores.password}`.length < 2) {
               errores.password = "La contrasena es incorrecta";
             }
             return errores;

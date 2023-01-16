@@ -81,12 +81,12 @@ navbars.push({
   to: "/prod",
   text: "Product",
 });
-navbars.push({
-  to: "regis",
-  text: "SignIn",
-});
 
 navbars.push({
+  to: "si",
+  text: "Torco",
+});
+navbars.push({
   to: "sign",
-  text: "Logn up",
+  text: "Sign  In",
 });
