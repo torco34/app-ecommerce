@@ -7,6 +7,7 @@ export const actionTypes = {
   ADD_TO_BASKET: "ADD_TO_BASKET",
   // ELIMINAR ELEMTOS DE CAR
   REMOVE_ITEM: "REMOVE_ITEM",
+  SET_USER: "SET_USER",
 };
 
 // RETO LOGRADO SUMA PRECIO
@@ -39,6 +40,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    // cambiar nombre
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
     default:
       return state;

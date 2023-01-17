@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
-import { Link } from "react-router-dom";
-export const SignInForm = () => {
+import { Link, useNavigate } from "react-router-dom";
+import { getApp } from "firebase/app";
+// console.log(getApp);
+export const SagnUp = () => {
   const [texSend, setTexSend] = useState(false);
+  const navegat = useNavigate();
+
   return (
     <>
       <ContainerFormik>
@@ -15,6 +19,7 @@ export const SignInForm = () => {
           }}
           validate={(valores) => {
             let errores = {};
+            // console.log(valores);
             // validacion name
             if (!valores.nombre) {
               errores.nombre = "Ingresado tu nombre";
@@ -43,8 +48,16 @@ export const SignInForm = () => {
           onSubmit={(valores, { resetForm }) => {
             resetForm();
 
+            // getApp(valores)
+            //   .then((getApp) => {
+            //     // console.log(getApp);
+            //     if (getApp) {
+            //       navegat("/prod");
+            //     }
+            //   })
+            //   .catch((err) => alert(err.message));
             setTexSend(true);
-            console.log("heloo");
+
             setTimeout(() => setTexSend(false), 5000);
           }}
         >

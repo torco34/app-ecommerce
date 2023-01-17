@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { ContainerTotal } from "../assets/styled/Total";
 import { getBasketTotal } from "../reducer";
 import { useStateValue } from "../StateProvider";
-console.log(getBasketTotal);
+// console.log(getBasketTotal);
 export const Total = () => {
   const [{ basket }, dispatch] = useStateValue();
   console.log(getBasketTotal);

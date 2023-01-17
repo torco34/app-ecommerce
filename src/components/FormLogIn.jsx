@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 export const FormLogIn = () => {
   const [texSend, setTexSend] = useState(false);
+
+  const naveget = useNavigate();
   return (
     <>
       <ContainerFormik>
@@ -17,7 +20,7 @@ export const FormLogIn = () => {
           }}
           validate={(valores) => {
             let errores = {};
-
+            // console.log(valores);
             // validacion correo
             if (!valores.correo) {
               errores.correo = "ingrese el correo";
@@ -38,11 +41,14 @@ export const FormLogIn = () => {
           }}
           onSubmit={(valores, { resetForm }) => {
             resetForm();
-
+            naveget("/prod");
             setTexSend(true);
 
             setTimeout(() => setTexSend(false), 5000);
           }}
+          // onClick={(valores) => {
+          //   console.log("hola mundo");
+          // }}
         >
           {({ errors }) => (
             <Form className="form">
