@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
 import { Link, useNavigate } from "react-router-dom";
-
+import { auth } from "../firebase/firebase";
+import { GoogleAuthProvider } from "firebase/auth";
 export const FormLogIn = () => {
   const [texSend, setTexSend] = useState(false);
 
   const naveget = useNavigate();
+
+  function handleOnclick() {
+    console.log("hel I'm toto...");
+  }
   return (
     <>
       <ContainerFormik>
@@ -46,9 +51,6 @@ export const FormLogIn = () => {
 
             setTimeout(() => setTexSend(false), 5000);
           }}
-          // onClick={(valores) => {
-          //   console.log("hola mundo");
-          // }}
         >
           {({ errors }) => (
             <Form className="form">
@@ -83,7 +85,7 @@ export const FormLogIn = () => {
               )}
               <button type="submit">Inicia sesión</button>
               <Link to="/regis">
-                <p>Registrarse</p>
+                <p onClick={handleOnclick}>Registrarse</p>
               </Link>
             </Form>
           )}

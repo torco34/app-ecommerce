@@ -9,6 +9,11 @@ const colors = {
 };
 const ContainerThader = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 1;
 `;
 const ContainerHeader = styled.div`
   font-family: Arial, Helvetica, sans-serif;

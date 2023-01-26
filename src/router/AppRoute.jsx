@@ -17,7 +17,7 @@ function AppRouter() {
       <Router>
         <Routes>
           <Route path="/" element={<Header />}>
-            {/* <Route path="/produc" element={<HomePages />} /> */}
+            <Route path="/home" element={<HomePages />} />
             <Route path="/prod" element={<ProductsPages />} />
             <Route path="regis" element={<SignUpPages />} />
             <Route path="sign" element={<SignInPages />} />
