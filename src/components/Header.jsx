@@ -8,6 +8,7 @@ import {
   ContainerImg,
   Carshoop,
 } from "../assets/styled/Header";
+
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import Badge from "react-bootstrap/Badge";
 import { Logo } from "./Logo";
@@ -22,7 +23,7 @@ function Header() {
         <Navbar bg="light" expand="lg">
           <Container>
             <ContainerImg>
-              <Link to="/prod">
+              <Link to="/home">
                 <Logo />
               </Link>
             </ContainerImg>
@@ -35,7 +36,7 @@ function Header() {
                       <NavLink
                         style={({ isActive }) => ({
                           color: isActive ? "#CE7777" : "#2b3a55",
-                          borderBottom: isActive ? "solid" : "",
+                          borderBottom: isActive ? "solid" : null,
                         })}
                         to={navbar.to}
                       >
@@ -73,20 +74,20 @@ function Header() {
 
 export { Header };
 const navbars = [];
-navbars.push({
-  to: "/home",
-  text: "Home",
-});
+// navbars.push({
+//   to: "/home",
+//   text: "Home",
+// });
 navbars.push({
   to: "/prod",
   text: "Product",
 });
 
 navbars.push({
-  to: "si",
+  to: "/tor",
   text: "Torco",
 });
 navbars.push({
-  to: "sign",
+  to: "/sign",
   text: "Sign  In",
 });

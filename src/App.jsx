@@ -1,10 +1,12 @@
 import React from "react";
 import { AppRouter } from "./router/AppRoute";
-
+import { ContainerApp } from "./assets/styled/App";
 function App() {
   return (
     <>
-      <AppRouter />
+      <ContainerApp>
+        <AppRouter />
+      </ContainerApp>
     </>
   );
 }

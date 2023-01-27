@@ -6,6 +6,8 @@ const ContainerCheckout = styled.div`
   gap: 20px;
 `;
 const ContainerCheck = styled.div`
+  height: 100vh;
+  margin-top: 35px;
   h2 {
     font-family: Arial, Helvetica, sans-serif;
     color: #ce7777;

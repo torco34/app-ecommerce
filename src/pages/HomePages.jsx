@@ -1,15 +1,15 @@
 import Carousel from "react-bootstrap/Carousel";
-import nike from "../assets/img/nike.jpeg";
-import nike2 from "../assets/img/nike2.jpeg";
-import logo from "../assets/img/logo.png";
+import nike from "../assets/img/pija.jpeg";
+import nike2 from "../assets/img/mug.jpeg";
+import logo from "../assets/img/pc.jpeg";
 import { ContainerHome } from "../assets/styled/HomePages";
 function HomePages() {
   return (
-    <div className="container">
+    <div className="container ">
       <ContainerHome>
         <Carousel>
           <Carousel.Item>
-            <img className="d-block " src={logo} alt="First slide" />
+            <img className="d-block 50-w" src={logo} alt="First slide" />
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
