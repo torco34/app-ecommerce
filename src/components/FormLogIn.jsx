@@ -3,15 +3,25 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 export const FormLogIn = () => {
   const [texSend, setTexSend] = useState(false);
 
   const naveget = useNavigate();
 
-  function handleOnclick() {
-    console.log("hel I'm toto...");
+  async function handleOnclick() {
+    const googleProvider = new GoogleAuthProvider();
+    await signInWithGoogle(googleProvider);
+    async function signInWithGoogle(googleProvider) {
+      try {
+        const res = await signInWithPopup(auth, googleProvider);
+        console.log(res);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   }
+
   return (
     <>
       <ContainerFormik>

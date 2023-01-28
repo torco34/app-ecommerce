@@ -74,10 +74,10 @@ function Header() {
 
 export { Header };
 const navbars = [];
-// navbars.push({
-//   to: "/home",
-//   text: "Home",
-// });
+navbars.push({
+  to: "/home",
+  text: "Home",
+});
 navbars.push({
   to: "/prod",
   text: "Product",

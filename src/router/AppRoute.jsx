@@ -2,7 +2,6 @@ import { Switch } from "antd";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "../components/Header";
-import { Nabvar } from "../components/Nabvar";
 
 import {
   CheckoutPages,
@@ -24,7 +23,7 @@ function AppRouter() {
             <Route path="/regis" element={<SignUpPages />}></Route>
             <Route path="/sign" element={<SignInPages />}></Route>
             <Route path="/chek" element={<CheckoutPages />}></Route>
-            <Route path="/" element={<NotFun />} />
+            <Route path="/tor" element={<NotFun />} />
           </Route>
         </Routes>
       </Router>

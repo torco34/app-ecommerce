@@ -30,8 +30,14 @@ function ProductsPages() {
 
   return (
     <div className="container">
-      <Input search={search} setSearch={setSearch} />
       <br />
+      <br />
+      <div>
+        <Input search={search} setSearch={setSearch} />
+      </div>
+      <br />
+      <br />
+
       <ContainerProduct>
         {!todos
           ? "Cargando..."
