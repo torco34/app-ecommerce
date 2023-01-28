@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 export const FormLogIn = () => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [stateCurrent, setCurrentState] = useState(0);
   const [texSend, setTexSend] = useState(false);
 
   const naveget = useNavigate();
-
+  // FIREBASE
+  useEffect(() => {
+    setCurrentState(3);
+    onAuthStateChanged(auth, handleUserStateChanged);
+  }, []);
+  function handleUserStateChanged(user) {
+    if (user) {
+      setCurrentState(1);
+      console.log(user.displayName);
+    } else {
+      console.log("no hay nada");
+      setCurrentState(4);
+    }
+  }
   async function handleOnclick() {
     const googleProvider = new GoogleAuthProvider();
     await signInWithGoogle(googleProvider);
@@ -21,7 +40,16 @@ export const FormLogIn = () => {
       }
     }
   }
+  if (stateCurrent === 1) {
+    return <div>Loading...</div>;
+  }
+  if (stateCurrent === 3) {
+    return <div>Esta autenticado, pero no registrado</div>;
+  }
 
+  if (stateCurrent === 4) {
+    return <div>No esta autenticado</div>;
+  }
   return (
     <>
       <ContainerFormik>
