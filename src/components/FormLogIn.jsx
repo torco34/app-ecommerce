@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ContainerFormik } from "../assets/styled/FormLogin";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
+import { HomeCarrousel } from "./HomeCarrousel";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -16,7 +17,7 @@ export const FormLogIn = () => {
   const naveget = useNavigate();
   // FIREBASE
   useEffect(() => {
-    setCurrentState(3);
+    // setCurrentState(3);
     onAuthStateChanged(auth, handleUserStateChanged);
   }, []);
   function handleUserStateChanged(user) {
@@ -25,7 +26,7 @@ export const FormLogIn = () => {
       console.log(user.displayName);
     } else {
       console.log("no hay nada");
-      setCurrentState(4);
+      // setCurrentState(3);
     }
   }
   async function handleOnclick() {
@@ -40,16 +41,24 @@ export const FormLogIn = () => {
       }
     }
   }
-  if (stateCurrent === 1) {
-    return <div>Loading...</div>;
-  }
-  if (stateCurrent === 3) {
-    return <div>Esta autenticado, pero no registrado</div>;
-  }
+  // if (stateCurrent === 1) {
+  //   return <div>Loading...</div>;
+  // }
+  // if (stateCurrent === 3) {
+  //   return <div>Esta autenticado, pero no registrado</div>;
+  // }
 
-  if (stateCurrent === 4) {
-    return <div>No esta autenticado</div>;
-  }
+  // if (stateCurrent === 2) {
+  //   console.log("es igual a 3");
+  //   return (
+  //     <div>
+  //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod harum
+  //       molestiae iure numquam provident dolorem culpa sed aspernatur maiores
+  //       esse. Porro delectus fuga cum earum veniam placeat reprehenderit eum
+  //       culpa.
+  //     </div>
+  //   );
+  // }
   return (
     <>
       <ContainerFormik>

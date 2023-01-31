@@ -18,16 +18,18 @@ import {
   setDoc,
   deleteDoc,
 } from "firebase/firestore";
+import { ImportOutlined } from "@ant-design/icons";
 const firebaseConfig = {
-  apiKey: "AIzaSyC8TNzc-DeoZDCie8Ialla7Mq4-USf8xEY",
-  authDomain: "ecommerce-react-e7a99.firebaseapp.com",
-  projectId: "ecommerce-react-e7a99",
-  storageBucket: "ecommerce-react-e7a99.appspot.com",
-  messagingSenderId: "979133463283",
-  appId: "1:979133463283:web:0745f22d87a65123885586",
+  apiKey: import.meta.env.VITE_APP_APIKEY,
+  authDomain: import.meta.env.VITE_APP_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_APP_PROJECTID,
+  storageBucket: import.meta.env.VITE_APP_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_MESSAGINGSENDER,
+  appId: import.meta.env.VITE_APP_APPID,
 };
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
+export async function userExists(uid) {}
