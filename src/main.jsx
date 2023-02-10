@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import App from "./App/index";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { StateProvider } from "./StateProvider";
-import reducer, { initialState } from "./reducer";
+import { StateProvider } from "./StateProvider/index";
+import reducer, { initialState } from "./StateProvider/reducer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

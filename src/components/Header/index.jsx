@@ -2,33 +2,31 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
+import { BsCart } from "react-icons/bs";
 import {
-  ContainerThader,
-  ContainerHeader,
-  ContainerImg,
-  Carshoop,
-} from "../assets/styled/Header";
-
-import { ShoppingCartOutlined } from "@ant-design/icons";
+  ContainerFather,
+  ConatinerNav,
+  CardOnLina,
+  BadgeCont,
+  Bs,
+} from "./styles";
 import Badge from "react-bootstrap/Badge";
-import { Logo } from "./Logo";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider/index";
+import { Logo } from "../Logo";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
   return (
     <>
-      <ContainerThader>
+      <ContainerFather>
         <Navbar bg="light" expand="lg">
           <Container>
-            <ContainerImg>
-              <Link to="/home">
-                <Logo />
-              </Link>
-            </ContainerImg>
+            <Link to="/home">
+              <Logo />
+            </Link>
 
-            <ContainerHeader>
+            <ConatinerNav>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-auto  link">
                   {navbars.map((navbar) => (
@@ -46,48 +44,46 @@ function Header() {
                   ))}
                 </Nav>
               </Navbar.Collapse>
-            </ContainerHeader>
+            </ConatinerNav>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </Container>
         </Navbar>
-      </ContainerThader>
-      <Carshoop>
-        <Button className=" " variant="outline-light" size="lg">
-          <Link to="/chek">
-            <ShoppingCartOutlined
-              style={{
-                fontSize: "50px",
-                color: "#0dcaf0",
-                position: "absolute",
-              }}
-            />
+      </ContainerFather>
+      <CardOnLina>
+        <Link to="/chek">
+          <Bs>
+            <BsCart size="40px" />
+          </Bs>
+          <BadgeCont>
             <Badge bg="danger">{basket?.length}</Badge>
-          </Link>
-        </Button>
-      </Carshoop>
+          </BadgeCont>
+        </Link>
+      </CardOnLina>
+
       <br></br>
       <Outlet />
     </>
   );
 }
-
 export { Header };
+
+//
 const navbars = [];
 navbars.push({
   to: "/home",
   text: "Home",
 });
 navbars.push({
-  to: "/prod",
+  to: "/product",
   text: "Product",
 });
 
 navbars.push({
-  to: "/tor",
-  text: "Torco",
+  to: "/sig",
+  text: "Sin Up",
 });
 navbars.push({
-  to: "/sign",
-  text: "Sign  In",
+  to: "/login",
+  text: "Sign In",
 });

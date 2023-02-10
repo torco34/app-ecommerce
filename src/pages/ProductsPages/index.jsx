@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Product } from "../components/Product";
-import productsData from "../data";
-import { ContainerProduct } from "../assets/styled/Products";
-import { Input } from "../components/Input";
+import { ProductCard } from "../../components/ProductCard";
+import productsData from "../../archivosGlobal/data";
+import { ContainerProduct } from "./styles";
+import { Input } from "../../components/Input/Index";
 
 function ProductsPages() {
   // const URL = "http://api.escuelajs.co/api/v1/products";
@@ -42,7 +42,7 @@ function ProductsPages() {
         {!todos
           ? "Cargando..."
           : searchTodo.map((todo, index) => (
-              <Product key={todo.id} todo={todo} />
+              <ProductCard key={todo.id} todo={todo} />
             ))}
       </ContainerProduct>
     </div>

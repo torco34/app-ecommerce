@@ -20,6 +20,7 @@ export const NotFun = () => {
       debitis explicabo natus porro dignissimos iure repellendus voluptate
       voluptas asperiores animi ipsam officiis unde, assumenda earum. Tenetur,
       sapiente!
+      <dir></dir>
     </div>
   );
 };
