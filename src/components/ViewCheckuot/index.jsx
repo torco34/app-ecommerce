@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import { getBasketTotal } from "../../StateProvider/reducer";
 import { useStateValue } from "../../StateProvider/index";
 import { Link } from "react-router-dom";
-// console.log(getBasketTotal);
-export const TotalProduct = () => {
+
+export const ViewCheckuot = () => {
   const [{ basket }, dispatch] = useStateValue();
   console.log(getBasketTotal);
   return (

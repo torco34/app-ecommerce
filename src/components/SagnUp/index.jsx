@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-
 import { Link, useNavigate } from "react-router-dom";
-import { getApp } from "firebase/app";
+import { ContainerLogUp, Forms } from "./styles";
 // console.log(getApp);
 export const SagnUp = () => {
   const [texSend, setTexSend] = useState(false);
   const navegat = useNavigate();
 
   return (
-    <>
+    <ContainerLogUp>
+      <h2>Reguistrarse</h2>
       <Formik
         initialValues={{
           nombre: "",
@@ -61,7 +61,7 @@ export const SagnUp = () => {
         }}
       >
         {({ errors }) => (
-          <Form className="form">
+          <Forms className="form">
             <div>
               <label>Nombre</label>
               <Field type="text" id="nombre" name="nombre" />
@@ -101,9 +101,9 @@ export const SagnUp = () => {
             <Link to="/login">
               <p>Iniciar sesion</p>
             </Link>
-          </Form>
+          </Forms>
         )}
       </Formik>
-    </>
+    </ContainerLogUp>
   );
 };

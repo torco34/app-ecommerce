@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-
 import { Link, useNavigate } from "react-router-dom";
+import { ContainerLogin, Forms } from "./styles";
 
 export const LogIn = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -42,7 +42,7 @@ export const LogIn = () => {
   //   );
   // }
   return (
-    <>
+    <ContainerLogin>
       <h2>Inicia sesión</h2>
 
       <Formik
@@ -81,7 +81,7 @@ export const LogIn = () => {
         }}
       >
         {({ errors }) => (
-          <Form className="form">
+          <Forms className="form">
             <div className="login__container--form">
               <label>Correo</label>
               <Field type="email" id="correo" name="correo" />
@@ -113,9 +113,9 @@ export const LogIn = () => {
             <Link to="/sig">
               <p onClick={handleOnclick}>Registrarse</p>
             </Link>
-          </Form>
+          </Forms>
         )}
       </Formik>
-    </>
+    </ContainerLogin>
   );
 };
