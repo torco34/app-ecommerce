@@ -44,7 +44,7 @@ export const BadgeCont = styled.div`
 `;
 export const Bs = styled.div`
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 0px;
   border-radius: 10px;
   width: 100%;
   text-align: center;
