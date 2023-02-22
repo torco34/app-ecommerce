@@ -23,24 +23,7 @@ export const LogIn = () => {
       }
     }
   }
-  // if (stateCurrent === 1) {
-  //   return <div>Loading...</div>;
-  // }
-  // if (stateCurrent === 3) {
-  //   return <div>Esta autenticado, pero no registrado</div>;
-  // }
-
-  // if (stateCurrent === 2) {
-  //   console.log("es igual a 3");
-  //   return (
-  //     <div>
-  //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod harum
-  //       molestiae iure numquam provident dolorem culpa sed aspernatur maiores
-  //       esse. Porro delectus fuga cum earum veniam placeat reprehenderit eum
-  //       culpa.
-  //     </div>
-  //   );
-  // }
+  
   return (
     <ContainerLogin>
       <h2>Inicia sesión</h2>
